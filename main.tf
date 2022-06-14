@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     snowflake = {
-      source  = "JBRUGOS/snowflake"
+      source  = "chanzuckerberg/snowflake"
       version = "0.25.17"
     }
   }
@@ -22,6 +22,7 @@ resource "snowflake_database" "demo_db_two" {
   name    = "DEMO_DB_TWO"
   comment = "Database for Snowflake Terraform demo"
 }
+
 resource "snowflake_schema" "demo_schema_two" {
   database = snowflake_database.demo_db_two.name
   name     = "DEMO_SCHEMA_TWO"
